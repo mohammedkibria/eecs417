@@ -13,6 +13,7 @@ h.psection()
 
 v_vec = h.Vector()
 t_vec = h.Vector()
+x_vec = h.Vector()
 v_vec.record(soma(0.8)._ref_v)
 t_vec.record(h._ref_t)
 
@@ -24,4 +25,3 @@ plt.plot(t_vec,v_vec)
 plt.xlabel('time (ms)')
 plt.ylabel('mV')
 plt.show()
-//good morning
