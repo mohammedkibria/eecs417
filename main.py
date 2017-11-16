@@ -13,7 +13,7 @@ h.psection()
 
 v_vec = h.Vector()
 t_vec = h.Vector()
-v_vec.record(soma(0.5)._ref_v)
+v_vec.record(soma(0.8)._ref_v)
 t_vec.record(h._ref_t)
 
 neuron.init()
