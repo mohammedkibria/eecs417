@@ -64,30 +64,33 @@ def ez_convert(data):
     return data_clean
 
 
+
 h = neuron.h
 soma = h.Section(name="soma")
-soma.nseg = 1000
-soma.L = 100000 # um
-soma.diam = 10 # um
-soma.Ra = 100 # Axial resistance Ohm * cm
+soma.nseg = 80
+soma.L = 40000 # um
+soma.diam = 20 # um
+soma.Ra = 34.5 # Axial resistance Ohm * cm
 soma.cm = 1 # Membrane capacitance in uF / cm^2
 soma.insert("hh")
+soma.insert("xtra")
+h.dt = .01 # msec
 
 simulation_length = 100 # msec
-h.dt = .01 # msec
-frequency = 1000 # Hertz
+frequency = 30000 # Hertz
+amplitude = 10 # mA
 t_values = np.arange(0, simulation_length + 2*h.dt, h.dt)
-sin_values = 10 * np.sin(t_values * 2 * np.pi * frequency / 1000)
+sin_values = amplitude * np.sin(t_values * 2 * np.pi * frequency / 1000)
 sin_vector = h.Vector(sin_values)
 stimobj  = h.IClamp(soma(0.5))
 stimobj.delay = 0
 stimobj.dur = 1E10
 sin_vector.play(stimobj._ref_amp, h.dt)
 
-apobj = h.IClamp(0.05, sec=soma)
-apobj.delay = 10
-apobj.dur = 5
-apobj.amp = 1000
+apobj = h.IClamp(soma(0.05))
+apobj.delay = 5
+apobj.dur = .1  # ms
+apobj.amp = 2000 # nA
 
 voltages, labels = ez_record(h, sections=[soma])
 
@@ -114,20 +117,20 @@ v_vec8.record(soma(0.8)._ref_v)
 v_vec9.record(soma(0.9)._ref_v)
 t_vec.record(h._ref_t)
 
-neuron.h.finitialize(-70)
+neuron.h.finitialize(-65)
 neuron.run(100)
 
-fig, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
-ax1.plot(t_vec,v_vec1,
-         t_vec,v_vec2,
-         t_vec,v_vec3,
-         t_vec,v_vec4)
-ax2.plot(t_vec, sin_values)
-ax3.plot(t_vec,v_vec6,
-         t_vec,v_vec7,
-         t_vec,v_vec8,
-         t_vec,v_vec9)
+# fig, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
+# ax1.plot(t_vec,v_vec1,
+         # t_vec,v_vec2,
+         # t_vec,v_vec3,
+         # t_vec,v_vec4)
+# ax2.plot(t_vec, sin_values)
+# ax3.plot(t_vec,v_vec6,
+         # t_vec,v_vec7,
+         # t_vec,v_vec8,
+         # t_vec,v_vec9)
 
-plt.xlabel('time (ms)')
-plt.ylabel('mV')
-plt.show()
+# plt.xlabel('time (ms)')
+# plt.ylabel('mV')
+# plt.show()
