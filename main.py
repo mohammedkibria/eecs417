@@ -120,17 +120,17 @@ t_vec.record(h._ref_t)
 neuron.h.finitialize(-65)
 neuron.run(100)
 
-# fig, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
-# ax1.plot(t_vec,v_vec1,
-         # t_vec,v_vec2,
-         # t_vec,v_vec3,
-         # t_vec,v_vec4)
-# ax2.plot(t_vec, sin_values)
-# ax3.plot(t_vec,v_vec6,
-         # t_vec,v_vec7,
-         # t_vec,v_vec8,
-         # t_vec,v_vec9)
+fig, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
+ax1.plot(t_vec,v_vec1,
+         t_vec,v_vec2,
+         t_vec,v_vec3,
+         t_vec,v_vec4)
+ax2.plot(t_vec, sin_values)
+ax3.plot(t_vec,v_vec6,
+         t_vec,v_vec7,
+         t_vec,v_vec8,
+         t_vec,v_vec9)
 
-# plt.xlabel('time (ms)')
-# plt.ylabel('mV')
-# plt.show()
+plt.xlabel('time (ms)')
+plt.ylabel('mV')
+plt.show()
