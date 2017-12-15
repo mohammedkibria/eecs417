@@ -73,7 +73,6 @@ soma.diam = 20 # um
 soma.Ra = 34.5 # Axial resistance Ohm * cm
 soma.cm = 1 # Membrane capacitance in uF / cm^2
 soma.insert("hh")
-soma.insert("xtra")
 h.dt = .01 # msec
 
 simulation_length = 100 # msec
