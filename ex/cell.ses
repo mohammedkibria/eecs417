@@ -1,0 +1,18 @@
+load_file("interpxyz.hoc")
+create soma
+access soma
+
+soma {
+    Ra = 34.5
+    nseg = 80
+    diam = 20 // um
+    L = 40000 // um
+}
+
+insert hh
+insert extracellular
+insert xtra
+
+define_shape()
+
+psection()

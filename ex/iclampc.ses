@@ -16,9 +16,9 @@ mt.select("IClamp") i = mt.selected()
 ms[i] = new MechanismStandard("IClamp")
 ms[i].set("del", 1, 0)
 ms[i].set("dur", 1, 0)
-ms[i].set("amp", 1, 0)
+ms[i].set("amp", 50, 0)
 mt.select("IClamp") i = mt.selected() maction(i)
-hoc_ac_ = 0.5
+hoc_ac_ = 0.25
 sec.sec move() d1.flip_to(0)
 }
 {object_pop() doNotify()}

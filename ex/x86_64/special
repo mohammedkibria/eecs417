@@ -1,13 +1,13 @@
 #!/bin/sh
 if test "x${NRNHOME}" = "x" ; then
-	NRNHOME="/usr"
+	NRNHOME="/home/ccheek/neuron/nrn"
 fi
 if test "x${NRNBIN}" = "x" ; then
-	NRNBIN="/usr/bin/"
+	NRNBIN="/home/ccheek/neuron/nrn/x86_64/bin/"
 fi
 if test "" = "yes" ; then
 	NRNIV="${NRNBIN}nrniv.app/Contents/MacOS/nrniv"
 else
 	NRNIV="${NRNBIN}nrniv"
 fi
-"${NRNIV}" -dll "/home/ccheek/documents/school/bme_417/project/x86_64/.libs/libnrnmech.so" "$@"
+"${NRNIV}" -dll "/home/ccheek/documents/school/bme_417/project/ex/x86_64/.libs/libnrnmech.so" "$@"

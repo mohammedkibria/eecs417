@@ -179,7 +179,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_reg_ba(_mechtype, _ba1, 11);
  	hoc_reg_ba(_mechtype, _ba2, 22);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 xtra /home/ccheek/documents/school/bme_417/project/x86_64/xtra.mod\n");
+ 	ivoc_help("help ?1 xtra /home/ccheek/documents/school/bme_417/project/extracellular_stim_and_rec/x86_64/xtra.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }

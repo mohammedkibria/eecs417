@@ -125,7 +125,7 @@ in the cell, such as the 0 end of the soma.
 // set up the transfer resistances
 
 // what is the approximate resistivity of tissue anyway?
-rho = 35.4  // ohm cm, squid axon cytoplasm
+rho = 300  // ohm cm, squid axon cytoplasm
 	    // for squid axon, change this to seawater's value
 	    // for mammalian cells, change to brain tissue or Ringer's value
 
@@ -152,9 +152,9 @@ proc setrx() {
 // assume monopolar stimulation and recording
 // electrode coordinates:
 // for this test, default location is 50 microns horizontal from the cell's 0,0,0
-XE = 50  // um
+XE = 25250  // um
 YE = 0
-ZE = 0
+ZE = 100
 
 proc setrx() {  // now expects xyc coords as arguments
   forall {

@@ -13,8 +13,9 @@ amplitude and sign of the local extracellular field.
 
 // default values
 DEL = 1  // ms
-DUR = 1
-AMP = -0.05  // mA
+DUR = 100 // ms
+AMP = 10  // mA
+FREQ = 1000 // Hz
 
 // this works with fixed dt and adaptive integration
 objref stim_amp, stim_time
@@ -28,18 +29,12 @@ proc stim_waveform() {
   // time vec 0, DEL, DEL, DEL+DUR, DEL+DUR, DEL+DUR+1
   //  really  0, $1,  $1,  $1+$2,   $1+$2,   $1+$2+1
   // first the stim vector
-  stim_amp.resize(6)
-  stim_amp.fill(0)
-  stim_amp.x[2]=1
-  stim_amp.x[3]=1
+  stim_amp.resize($2 * $4)
+  stim_amp.sin($4, 0, 100 / $4)
   stim_amp.mul($3)
   // now the time vector
-  stim_time.resize(6)
-  stim_time.x[1]=$1
-  stim_time.x[2]=$1
-  stim_time.x[3]=$1+$2
-  stim_time.x[4]=$1+$2
-  stim_time.x[5]=$1+$2+1
+  stim_time.resize($2 * $4)
+  stim_time.indgen(0, 1 / $4)
 }
 
 
@@ -64,18 +59,20 @@ proc setstim() {
   del = $1
   dur = $2
   amp = $3
-  stim_waveform(del, dur, amp)
+  freq = $4
+  stim_waveform(del, dur, amp, freq)
   attach_stim()
 }
 
 
-setstim(DEL, DUR, AMP)
+setstim(DEL, DUR, AMP, FREQ)
 
 print "Use setstim(del, dur, amp) to change latency (ms), duration (ms),"
 print "and amplitude (mA) of extracellular stimulus current."
 
-xpanel("Extracellular Stimulus Current", 0)
-  xvalue("del (ms)", "DEL", 1, "setstim(DEL,DUR,AMP)", 0, 1)
-  xvalue("dur (ms)", "DUR", 1, "setstim(DEL,DUR,AMP)", 0, 1)
-  xvalue("amp (mA)", "AMP", 1, "setstim(DEL,DUR,AMP)", 0, 1)
+xpanel("Extracellular Sine Current", 0)
+  xvalue("del (ms)", "DEL", 1, "setstim(DEL,DUR,AMP,FREQ)", 0, 1)
+  xvalue("dur (ms)", "DUR", 1, "setstim(DEL,DUR,AMP,FREQ)", 0, 1)
+  xvalue("amp (mA)", "AMP", 1, "setstim(DEL,DUR,AMP,FREQ)", 0, 1)
+  xvalue("freq (Hz)", "FREQ", 1, "setstim(DEL,DUR,AMP,FREQ)", 0, 1)
 xpanel(73,497)

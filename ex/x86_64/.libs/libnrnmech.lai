@@ -14,10 +14,10 @@ library_names='libnrnmech.so.0.0.0 libnrnmech.so.0 libnrnmech.so'
 old_library=''
 
 # Linker flags that cannot go in dependency_libs.
-inherited_linker_flags=' -pthread'
+inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/usr/lib /usr/lib/libnrnoc.la /usr/lib/liboc.la -lX11 /usr/lib/libmemacs.la /usr/lib/libnrnmpi.la /usr/lib/libscopmath.la /usr/lib/libsparse13.la -lreadline -lncurses /usr/lib/libnrniv.la /usr/lib/libivoc.la /usr/lib/libneuron_gnu.la /usr/lib/libmeschach.la /usr/lib/libsundials.la /usr/lib/libivos.la -lm -ldl'
+dependency_libs=' -L/home/ccheek/neuron/nrn/x86_64/lib /home/ccheek/neuron/nrn/x86_64/lib/libnrnoc.la /home/ccheek/neuron/nrn/x86_64/lib/liboc.la -lX11 /home/ccheek/neuron/nrn/x86_64/lib/libmemacs.la /home/ccheek/neuron/nrn/x86_64/lib/libnrnmpi.la /home/ccheek/neuron/nrn/x86_64/lib/libscopmath.la /home/ccheek/neuron/nrn/x86_64/lib/libsparse13.la -lreadline -lncurses /home/ccheek/neuron/nrn/x86_64/lib/libnrniv.la /home/ccheek/neuron/nrn/x86_64/lib/libivoc.la /home/ccheek/neuron/nrn/x86_64/lib/libneuron_gnu.la /home/ccheek/neuron/nrn/x86_64/lib/libmeschach.la /home/ccheek/neuron/nrn/x86_64/lib/libsundials.la -lm -ldl'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -28,7 +28,7 @@ age=0
 revision=0
 
 # Is this an already installed library?
-installed=no
+installed=yes
 
 # Should we warn about portability when linking against -modules?
 shouldnotlink=yes
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/usr/lib'
+libdir='/home/ccheek/neuron/nrn/x86_64/lib'

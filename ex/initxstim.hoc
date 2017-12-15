@@ -30,7 +30,7 @@ load_file("field.hoc")		// computes extracellularly recorded potential vrec
 load_file("vrecc.ses")		// graph of vrec(t)
 load_file("calcrxc.hoc")	// computes transfer r between segments and recording electrodes
                           // may require modification for particular electrode geometries
-// load_file("iclampc.ses")	// intracellular stimulus
+load_file("iclampc.ses")	// intracellular stimulus
 load_file("stim.hoc")		// extracellular stimulus
                         // may require modification for particular stimulus protocols
 load_file("msgxc.hoc")		// minimal hints

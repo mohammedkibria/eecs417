@@ -9,7 +9,7 @@ void modl_reg(){
   if (!nrn_nobanner_) if (nrnmpi_myid < 1) {
     fprintf(stderr, "Additional mechanisms from files\n");
 
-    fprintf(stderr," extracellular_stim_and_rec/xtra.mod");
+    fprintf(stderr," xtra.mod");
     fprintf(stderr, "\n");
   }
   _xtra_reg();

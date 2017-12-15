@@ -11,8 +11,6 @@ flush_list.append(save_window_)
 save_window_.save_name("flush_list.")
 objectvar rvp_
 rvp_ = new RangeVarPlot("er_xtra")
-dend[77] rvp_.begin(1)
-dend[7] rvp_.end(1)
 rvp_.origin(4.81116)
 save_window_.addobject(rvp_, 2, 1, 0.8, 0.9)
 }
