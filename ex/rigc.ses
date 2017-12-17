@@ -28,80 +28,39 @@ xpanel(6,105)
 }
 {
 save_window_ = new Graph(0)
-save_window_.size(0,10,-80,40)
+save_window_.size(0,20,-80,40)
 scene_vector_[3] = save_window_
-{save_window_.view(0, -80, 10, 120, 300, 105, 300.48, 200.32)}
+{save_window_.view(0, -80, 20, 120, 300, 105, 300.48, 200.32)}
 graphList[0].append(save_window_)
 save_window_.save_name("graphList[0].")
-save_window_.addexpr("v(.1)", 1, 1, 0.8, 0.9, 2)
+save_window_.addexpr("v(.4)", 1, 1, 0.8, 0.9, 2)
 }
 {
 save_window_ = new Graph(0)
-save_window_.size(0,10,-80,40)
+save_window_.size(0,20,-80,40)
 scene_vector_[3] = save_window_
-{save_window_.view(0, -80, 10, 120, 300, 105, 300.48, 200.32)}
-graphList[0].append(save_window_)
-save_window_.save_name("graphList[0].")
-save_window_.addexpr("v(.3)", 1, 1, 0.8, 0.9, 2)
-}
-{
-save_window_ = new Graph(0)
-save_window_.size(0,10,-80,40)
-scene_vector_[3] = save_window_
-{save_window_.view(0, -80, 10, 120, 300, 105, 300.48, 200.32)}
+{save_window_.view(0, -80, 20, 120, 300, 405, 300.48, 200.32)}
 graphList[0].append(save_window_)
 save_window_.save_name("graphList[0].")
 save_window_.addexpr("v(.5)", 1, 1, 0.8, 0.9, 2)
 }
 {
 save_window_ = new Graph(0)
-save_window_.size(0,10,-80,40)
+save_window_.size(0,20,-80,40)
 scene_vector_[3] = save_window_
-{save_window_.view(0, -80, 10, 120, 300, 105, 300.48, 200.32)}
+{save_window_.view(0, -80, 20, 120, 300, 705, 300.48, 200.32)}
 graphList[0].append(save_window_)
 save_window_.save_name("graphList[0].")
-save_window_.addexpr("v(.7)", 1, 1, 0.8, 0.9, 2)
+save_window_.addexpr("v(.6)", 1, 1, 0.8, 0.9, 2)
 }
 {
 save_window_ = new Graph(0)
-save_window_.size(0,10,-80,40)
+save_window_.size(0,20,-80,40)
 scene_vector_[3] = save_window_
-{save_window_.view(0, -80, 10, 120, 300, 105, 300.48, 200.32)}
+{save_window_.view(0, -80, 20, 120, 300, 1005, 300.48, 200.32)}
 graphList[0].append(save_window_)
 save_window_.save_name("graphList[0].")
-save_window_.addexpr("v(.9)", 1, 1, 0.8, 0.9, 2)
-}
-{
-save_window_ = new Graph(0)
-save_window_.size(-376.823,328.433,-80,40)
-scene_vector_[4] = save_window_
-{save_window_.view(-376.823, -80, 705.256, 120, 300, 370, 300.48, 200.32)}
-flush_list.append(save_window_)
-save_window_.save_name("flush_list.")
-objectvar rvp_
-rvp_ = new RangeVarPlot("v")
-rvp_.origin(4.81116)
-save_window_.addobject(rvp_, 2, 9, 0.640256, 0.904792)
-objectvar rvp_
-rvp_ = new RangeVarPlot("v($1)+vext($1)")
-rvp_.origin(4.81116)
-save_window_.addobject(rvp_, 3, 7, 0.64984, 0.880831)
-}
-{
-save_window_ = new Graph(0)
-save_window_.size(-376.823,328.433,-80,40)
-scene_vector_[5] = save_window_
-{save_window_.view(-376.823, -80, 705.256, 120, 300, 635, 300.48, 200.32)}
-flush_list.append(save_window_)
-save_window_.save_name("flush_list.")
-objectvar rvp_
-rvp_ = new RangeVarPlot("vext")
-rvp_.origin(4.81116)
-save_window_.addobject(rvp_, 2, 9, 0.8, 0.9)
-objectvar rvp_
-rvp_ = new RangeVarPlot("e_extracellular")
-rvp_.origin(4.81116)
-save_window_.addobject(rvp_, 3, 1, 0.8, 0.9)
+save_window_.addexpr("v(.8)", 1, 1, 0.8, 0.9, 2)
 }
 objectvar scene_vector_[1]
 {doNotify()}
